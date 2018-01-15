@@ -33,10 +33,9 @@ background-color: cadetblue !important;
 
 #myInput {
   color: black !important;
-    background-image: url(''); /* Add a search icon to input download.png*/
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 10%; /* Full-width */
+    width: 100%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
@@ -46,7 +45,8 @@ background-color: cadetblue !important;
 a
 {color: white !important;}
 #myUL {
-  background-color: steelblue;
+  background-color: white;
+  color: steelblue !important;
     /* Remove default list styling */
     list-style-type: none;
     padding: 0;
@@ -60,12 +60,15 @@ a
     padding: 12px; /* Add some padding */
     text-decoration: none; /* Remove default text underline */
     font-size: 18px; /* Increase the font-size */
-    color: black; /* Add a black text color */
+    color: steelblue !important; /* Add a black text color */
     display: block; /* Make it into a block element to fill the whole list */
 }
 
 #myUL li a:hover:not(.header) {
     background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+.active .navbar{
+  background-color:black !important;
 }
 </style>
 <script>
@@ -88,26 +91,7 @@ a
 <div class="container-fluid ">
 
   
-<script>
-    function myFunction() {
-        // Declare variables
-        var input, filter, ul, li, a, i;
-        input = document.getElementById('myInput');
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByTagName('li');
-    
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("a")[0];
-            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
-        }
-    }
-    </script>
+
     
     
 <nav class="navbar navbar-default" >
@@ -120,14 +104,15 @@ a
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" style="color: white !important;" href="#">Podio</a>
+        <a class="navbar-brand" style="color: white !important;" href="#">PODIO</a>
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" >
-          <li class="active"><a href="#" style="color: white !important;">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">AppStore</a></li>
+          <li >
+            <a href="#" style="color: white !important;">Home <span class="sr-only">(current)</span></a></li>
+         
           <li class="dropdown" id="List">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 
             aria-expanded="false">Go To Space <span class="caret"></span></a>
@@ -136,10 +121,9 @@ a
                 <div>
                     <form class="navbar-form navbar-left" role="search">
                         <div class="form-group">
-                                                        
-                            <input type="text" style="background-color: whitesmoke
-                            " id="myInput" class="form-control" placeholder="Search">
-                            
+                                                       
+                            <input type="text"  id="myInput" class="form-control" placeholder="Search" style="text-overflow: ellipsis; color:yellow;">
+                             </input>
                           
                         <!-- <button type="submit" class="btn btn-default">Submit</button> -->
                       </form>
@@ -169,31 +153,14 @@ a
               
               });
             </script>
-
-
-
-
-
-             
+         
             </ul>
 
 
-          </li>
+          </li>    <li><a href="#">AppStore</a></li>
         </ul>
         
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
+        
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
